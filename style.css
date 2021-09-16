@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,400;1,500&display=swap');
+
+body{
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(51, 68, 228);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.start,.restart{
+  position: absolute;
+  min-width: 300px;
+  padding: 10px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  transform: translateY(-30px);
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 0 10px black;
+  box-sizing: border-box;
+  transition: 1s ease;
+}
+
+
+.start .start-title,.restart .restart-title,.start .emoji,.restart .emoji{
+  font-size: 30px;
+  font-weight: 600;
+}
+.start .emoji,.restart .emoji{
+  margin-top: 10px;
+}
+.start .btn-start button,.restart .btn-restart button,.add-flag button{
+  box-sizing: border-box;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin: 30px 0;
+  font-family: inherit;
+  font-size: 20px;
+  outline: none;
+  color: rgb(8, 74, 216);
+  border-radius: 8px;
+  border: 1px solid rgb(8, 74, 216);
+  background-color:#fff; 
+  transition: all .3s ease;
+}
+.start .btn-start button:hover,.restart .btn-restart button:hover{
+  background-color: rgb(8, 74, 216);
+  color: #fff;
+}
+p{
+  font-family: inherit;
+  font-size: 30px;
+  color: #fff;
+  transform: translateY(-30px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s ease;
+}
+.grid{
+  transform: translateY(-30px);
+  opacity: 0;
+  pointer-events: none;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 5px solid rgb(4, 57, 170);
+  border-bottom: 5px solid rgb(4, 57, 170);
+  border-left: 5px solid rgb(8, 74, 216);
+  border-right: 5px solid rgb(8, 74, 216);
+  background-color: #fff;
+  box-shadow: 0 0 10px black;
+  transition: all .3s ease;
+}
+.grid div{
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  background-color: rgb(218, 218, 218);
+  border: 1px solid rgb(68, 8, 235);
+}
+.bomb,.flag,.grid div{
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 40px
+}
+/* div.bomb{
+  background-color: rgb(168, 166, 166);
+} */
+div.checked{
+  background-color: rgb(168, 166, 166);;
+}
+.add-flag{
+  transform: translateY(-15px);
+  opacity: 0;
+  pointer-events: none;
+}
+.grid.active,.start.active,.restart.active,p.active,.add-flag.active{
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+@media (max-width: 440px){
+  .start,.restart{
+    min-width: 200px;
+  }
+  .start .start-title,.restart .restart-title,.start .emoji,.restart .emoji{
+  font-size: 20px;
+  font-weight: 400;
+}
+.grid{
+  width: 200px;
+  height: 200px;
+}
+.grid div{
+  font-size: 10px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+}
+p{
+  font-size: 20px;
+}
+.start .btn-start button,.restart .btn-restart button,.add-flag button{
+  font-size: 10px;
+}
+
+
+}
